@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    int regNo;
+    char name[50];
+    int age;
+    float cgpa;
+};
+
+int main() {
+    struct Student students[5];
+    int i, topStudentIndex = 0;
+
+  
+    for (i = 0; i < 5; i++) {
+        printf("Enter details for student %d:\n", i + 1);
+        printf("Register Number: ");
+        scanf("%d", &students[i].regNo);
+        printf("Name: ");
+        scanf(" %[^\n]", students[i].name);
+        printf("Age: ");
+        scanf("%d", &students[i].age);
+        printf("CGPA: ");
+        scanf("%f", &students[i].cgpa);
+    }
+
+
+    for (i = 1; i < 5; i++) {
+        if (students[i].cgpa > students[topStudentIndex].cgpa) {
+            topStudentIndex = i;
+        }
+    }
+
+    printf("Student with the highest CGPA:\n");
+    printf("Register Number: %d\n", students[topStudentIndex].regNo);
+    printf("Name: %s\n", students[topStudentIndex].name);
+    printf("Age: %d\n", students[topStudentIndex].age);
+    printf("CGPA: %.2f\n", students[topStudentIndex].cgpa);
+
+    return 0;
+}

@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+
+struct Square {
+    int side;
+};
+
+struct Rectangle {
+    int length;
+    int breadth;
+};
+
+
+struct Shape {
+    struct Square square;
+    struct Rectangle rectangle;
+};
+
+int main() {
+    struct Shape shape;
+
+
+    printf("Enter the side of the square: ");
+    scanf("%d", &shape.square.side);
+
+
+    printf("Enter the length and breadth of the rectangle: ");
+    scanf("%d %d", &shape.rectangle.length, &shape.rectangle.breadth);
+
+
+    int square_area = shape.square.side * shape.square.side;
+    printf("Area of the square: %d\n", square_area);
+
+
+    int rectangle_area = shape.rectangle.length * shape.rectangle.breadth;
+    printf("Area of the rectangle: %d\n", rectangle_area);
+
+    return 0;
+}

@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int binarySearch(int arr[], int size, int target) {
+    int left = 0, right = size - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target) {
+            return 1; // Book ID found
+        }
+        if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return 0; 
+}
+
+int main() {
+    int bookIDs[] = {101, 203, 304, 450, 500}; // Ordered list of book IDs
+    int size = sizeof(bookIDs) / sizeof(bookIDs[0]);
+    int targetID;
+
+    printf("Enter the book ID to search: ");
+    scanf("%d", &targetID);
+
+    if (binarySearch(bookIDs, size, targetID)) {
+        printf("Book ID %d is available in the library.\n", targetID);
+    } else {
+        printf("Book ID %d is not available in the library.\n", targetID);
+    }
+
+    return 0;
+}

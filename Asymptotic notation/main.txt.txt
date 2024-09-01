@@ -1,0 +1,18 @@
+Problem Statement: Illustrate how asymptotic notations can be used to analyze an algorithm.
+
+Solution Approach: Asymptotic notations are used to describe the running time of an algorithm as the input size increases. Common notations include:
+
+Big-O Notation (O): It represents the upper bound of the algorithm's running time. It gives the worst-case complexity.
+
+Omega Notation (Ω): It represents the lower bound of the algorithm's running time. It gives the best-case complexity.
+
+Theta Notation (Θ): It represents the tight bound of the algorithm's running time. It gives both the upper and lower bounds, i.e., the average-case complexity.
+
+Example:
+Consider a simple algorithm that adds two integers. The time complexity for this algorithm is constant, denoted as O(1), because the operation takes a constant amount of time regardless of the input size.
+
+For an algorithm that involves looping through an array of size n, such as finding the maximum value in the array, the time complexity would be O(n). This is because the algorithm needs to inspect each element in the array once.
+
+If the algorithm involves two nested loops over the array, such as in a selection sort algorithm, the time complexity would be O(n^2), because for each element in the outer loop, the inner loop also iterates over the array.
+
+The purpose of asymptotic notations is to focus on the overall growth of the algorithm's running time without getting bogged down by lower-order terms or constants.

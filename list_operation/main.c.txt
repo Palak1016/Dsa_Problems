@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+
+
+    printf("Element at index 0: %d\n", arr[0]);
+    printf("Element at index 2: %d\n", arr[2]);
+
+
+    arr[1] = 25;
+    printf("Modified element at index 1: %d\n", arr[1]);
+
+
+    printf("Array elements: ");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+  
+    int search = 30;
+    int found = 0;
+    for (int i = 0; i < 5; i++) {
+        if (arr[i] == search) {
+            printf("Element %d found at index %d\n", search, i);
+            found = 1;
+            break;
+        }
+    }
+    if (!found) {
+        printf("Element %d not found in the array.\n", search);
+    }
+
+  
+
+    int new_arr[6];
+    for (int i = 0; i < 2; i++) {
+        new_arr[i] = arr[i];
+    }
+    new_arr[2] = 35;
+    for (int i = 2; i < 5; i++) {
+        new_arr[i + 1] = arr[i];
+    }
+
+    printf("Array after inserting 35 at index 2: ");
+    for (int i = 0; i < 6; i++) {
+        printf("%d ", new_arr[i]);
+    }
+    printf("\n");
+
+   
+
+    for (int i = 3; i < 5; i++) {
+        arr[i] = arr[i + 1];
+    }
+
+    printf("Array after deleting element at index 3: ");
+    for (int i = 0; i < 4; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}

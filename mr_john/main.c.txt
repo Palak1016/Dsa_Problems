@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int treasures[5]; 
+    int total_weight = 0;
+
+   
+    printf("Enter the weights of the 5 treasures:\n");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &treasures[i]);
+        total_weight += treasures[i];      }
+
+ 
+    printf("Total weight collected: %d\n", total_weight);
+
+    return 0;
+}
